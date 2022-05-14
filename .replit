@@ -1,2 +1,2 @@
 language = "python3"
-run = "cd ActivitySet#1; python problem#06.py"
+run = "cd ActivitySet#1; python problem#03.py"
