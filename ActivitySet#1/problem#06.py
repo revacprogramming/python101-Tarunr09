@@ -10,7 +10,6 @@ while True:
          a= int(num)
         except:
             print("Invalid input")
-            continue
         if smallest is None:
             smallest = a
         elif a < smallest:
