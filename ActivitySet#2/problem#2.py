@@ -1,6 +1,7 @@
 
 def add(a, b):
-    pass  # ...
+    a=int(input('Enter the first number: '))
+    b=int(input('Enter the second number: '))
 
 
 def output(a, b, sum):
