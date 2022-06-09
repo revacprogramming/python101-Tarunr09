@@ -7,7 +7,6 @@ mysock.connect(('data.pr4e.org', 80))
 cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
 mysock.send(cmd)
 
-
 while True:
     data = mysock.recv(512)
     if len(data) < 1:
@@ -27,7 +26,7 @@ sum=0
 for tag in tags:
     
     sum=sum+int(tag.contents[0])
-print(sum)'''
+print(sum)
 
 
 import urllib.request, urllib.parse, urllib.error
@@ -50,4 +49,29 @@ for tag in tags:
 sum=0
 for i in x:
     sum = sum + int(i)
-print(sum)
+print(sum)'''
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import ssl
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input('Enter - ')
+html = urllib.request.urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
+href = soup('a')
+
+count = int(input('Enter count:'))
+position = int(input('Enter position:'))-1
+
+for i in range(count):
+    link = href[position].get('href', None)
+    print (link)
+    url = link
+    html = urllib.request.urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    href = soup('a')
