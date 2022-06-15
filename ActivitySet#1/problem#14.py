@@ -33,7 +33,7 @@ url = input ('Enter url: ')
 print('Retrieving', url)
 
 total = 0
-count = 
+count = 0
 
 uh = urllib.request.urlopen(url)
 data = uh.read()
