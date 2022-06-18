@@ -45,4 +45,4 @@ print('User count:', len(info))
 for item in info["comments"]:
     number = int(item["count"])
     count = count + number
-print(count)
+print(count
