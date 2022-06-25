@@ -4,7 +4,7 @@
 
 CREATE TABLE Age (
   name VARCHAR(128),
-  age INTEGER
+  age INTEGER 
 );
 DELETE FROM Age;
 INSERT INTO Age (name, age) VALUES ('Alise', 26);
